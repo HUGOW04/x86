@@ -7,7 +7,7 @@ void main() {
     isr_install();
     irq_install();
 
-    kprint("Type Something");
+    kprint(">");
 }
 
 void user_input(char* input)
