@@ -6,7 +6,8 @@
 void main() {
     isr_install();
     irq_install();
-
+    clear_screen();
+    kprint_at("x86 operating system\n",30,1);
     kprint(">");
 }
 
@@ -19,7 +20,7 @@ void user_input(char* input)
     }
     else if(strcmp(input,"HELP") == 0)
     {
-        kprint("END - Stopping the CPU\nCLEAR - clear screen\n");
+        kprint("END - Stopping the CPU\nCLEAR - clear screen\nPAGE - test malloc\n");
     }
     else if(strcmp(input,"CLEAR") == 0)
     {
@@ -38,7 +39,7 @@ void user_input(char* input)
         kprint(phys_str);
         kprint("\n");
     }
-    kprint("You said: ");
+    kprint(">");
     kprint(input);
     kprint("\n>");
 }
