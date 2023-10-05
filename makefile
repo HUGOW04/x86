@@ -40,6 +40,9 @@ LIBC_OBJS = $(patsubst $(LIBC_DIR)/%.c, $(OBJ_DIR)/%.o, $(LIBC_C_FILES))
 # Targets
 all: run
 
+# Ensure that the obj directory exists or create it
+$(shell mkdir -p $(OBJ_DIR))
+
 $(OBJ_DIR)/kernel.bin: $(KERNEL_OBJS) $(DRIVERS_OBJS) $(CPU_OBJS) $(LIBC_OBJS)
 	$(LD) $(LDFLAGS) -e _start -o $@ $^
 
