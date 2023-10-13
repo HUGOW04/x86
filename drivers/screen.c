@@ -9,7 +9,8 @@ int print_char(char c, int col, int row, char attr);
 int get_offset(int col, int row);
 int get_offset_row(int offset);
 int get_offset_col(int offset);
-
+int color;
+color = BLACK;
 /**********************************************************
  * Public Kernel API functions                            *
  **********************************************************/
@@ -18,6 +19,7 @@ int get_offset_col(int offset);
  * Print a message on the specified location
  * If col, row, are negative, we will use the current offset
  */
+
 void kprint_at(char *message, int col, int row) {
     /* Set cursor if col/row are negative */
     int offset;
@@ -32,7 +34,7 @@ void kprint_at(char *message, int col, int row) {
     /* Loop through message and print it */
     int i = 0;
     while (message[i] != 0) {
-        offset = print_char(message[i++], col, row, WHITE_ON_BLACK);
+        offset = print_char(message[i++], col, row, color);
         /* Compute row/col for next iteration */
         row = get_offset_row(offset);
         col = get_offset_col(offset);
@@ -47,7 +49,7 @@ void kprint_backspace() {
     int offset = get_cursor_offset()-2;
     int row = get_offset_row(offset);
     int col = get_offset_col(offset);
-    print_char(0x08, col, row, WHITE_ON_BLACK);
+    print_char(0x08, col, row, color);
 }
 
 
@@ -137,11 +139,12 @@ void clear_screen() {
     u8 *screen = (u8*) VIDEO_ADDRESS;
 
     for (i = 0; i < screen_size; i++) {
-        screen[i*2] = ' ';
-        screen[i*2+1] = WHITE_ON_BLACK;
+        screen[i * 2] = ' ';
+        screen[i * 2 + 1] = color;
     }
     set_cursor_offset(get_offset(0, 0));
 }
+
 
 
 int get_offset(int col, int row) { return 2 * (row * MAX_COLS + col); }
