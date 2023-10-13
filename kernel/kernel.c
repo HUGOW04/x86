@@ -20,7 +20,7 @@ void user_input(char* input)
     }
     else if(strcmp(input,"HELP") == 0)
     {
-        kprint("END - Stopping the CPU\nCLEAR - clear screen\nPAGE - test malloc\nBACKGROUND color - change background color of screen\n");
+        kprint("END - Stopping the CPU\nCLEAR - clear screen\nPAGE - test malloc\nBACKGROUND color - change background color of screen\nnum1 operator num2 - calculator takes two numbers and an operator\n");
     }
     else if(strcmp(input,"CLEAR") == 0)
     {
