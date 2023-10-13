@@ -75,3 +75,35 @@ int strcmp(char s1[], char s2[]) {
     }
     return s1[i] - s2[i];
 }
+
+int atoi(char *string)
+{
+    char a=0;
+    int res=0;
+    while((a= *string++)!='\0')
+        {        
+            res = res*10 + a - '0';  
+        }
+
+    return res;
+}
+
+int is_numeric(const char* str) {
+    int i = 0;
+
+    // Check if the string is empty
+    if (str[0] == '\0') {
+        return 0;
+    }
+
+    // Check each character in the string
+    while (str[i] != '\0') {
+        if (str[i] < '0' || str[i] > '9') {
+            return 0; // Non-numeric character found
+        }
+        i++;
+    }
+
+    return 1; // All characters are numeric
+}
+
