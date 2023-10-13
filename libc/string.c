@@ -107,3 +107,41 @@ int is_numeric(const char* str) {
     return 1; // All characters are numeric
 }
 
+int find_char(const char* str, char target) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == target) {
+            return 1; // Return 1 if the character was found
+        }
+    }
+    return 0; // Return 0 if the character was not found
+}
+
+void get_chars_before_op(const char* input, char* output,const char* op) {
+    int i;
+
+    for (i = 0; input[i] != '\0' && input[i] != op; i++) {
+        output[i] = input[i];
+    }
+
+    output[i] = '\0'; // Null-terminate the output string
+}
+
+void get_chars_after_op(const char* input, char* output,const char* op) {
+    int i, j;
+
+    // Find the position of the first '-' character in the input
+    for (i = 0; input[i] != '\0' && input[i] != op; i++) {
+        // Continue until the '-' character is found
+    }
+
+    // Skip the '-' character and copy characters after it to the output
+    if (input[i] == op) {
+        i++; // Skip the '-'
+    }
+
+    for (j = 0; input[i] != '\0'; i++, j++) {
+        output[j] = input[i];
+    }
+
+    output[j] = '\0'; // Null-terminate the output string
+}
