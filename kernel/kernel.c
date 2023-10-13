@@ -25,6 +25,7 @@ void user_input(char* input)
     else if(strcmp(input,"CLEAR") == 0)
     {
         clear_screen();
+        kprint_at("x86 operating system\n",30,1);
     }
     else if (strcmp(input, "PAGE") == 0) {
         u32 phys_addr;
