@@ -20,7 +20,7 @@ void user_input(char* input)
     }
     else if(strcmp(input,"HELP") == 0)
     {
-        kprint("END - Stopping the CPU\nCLEAR - clear screen\nPAGE - test malloc\n");
+        kprint("END - Stopping the CPU\nCLEAR - clear screen\nPAGE - test malloc\nBACKGROUND color - change background color of screen\n");
     }
     else if(strcmp(input,"CLEAR") == 0)
     {
@@ -108,8 +108,5 @@ void user_input(char* input)
         kprint("Invalid color choice. try HELP for more info\n");
     }
 
-
-    kprint(">");
-    kprint(input);
     kprint("\n>");
 }
