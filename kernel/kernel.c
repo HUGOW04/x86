@@ -105,7 +105,7 @@ void user_input(char* input)
         clear_screen();
         kprint_at("x86 operating system\n",30,1);
     } else {
-        kprint("Invalid color choice. Background color remains unchanged.\n");
+        kprint("Invalid color choice. try HELP for more info\n");
     }
 
 
