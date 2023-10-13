@@ -40,6 +40,73 @@ void user_input(char* input)
         kprint(phys_str);
         kprint("\n");
     }
+    else if (find_char(input, '-') == 1) {
+        char num1[20];
+        char num2[20];
+        get_chars_before_op(input, num1,'-');
+        get_chars_after_op(input, num2,'-');
+        if (is_numeric(num1) && is_numeric(num2)) {
+            int int_num1 = atoi(num1);
+            int int_num2 = atoi(num2);
+            int result = int_num1 - int_num2;
+            kprint("Result: ");
+            char result_str[20];
+            int_to_ascii(result, result_str);
+            kprint(result_str);
+        }
+    }
+    else if (find_char(input, '+') == 1) {
+        char num1[20];
+        char num2[20];
+        get_chars_before_op(input, num1, '+');
+        get_chars_after_op(input, num2, '+');
+        if (is_numeric(num1) && is_numeric(num2)) {
+            int int_num1 = atoi(num1);
+            int int_num2 = atoi(num2);
+            int result = int_num1 + int_num2; // Change this line to addition
+            kprint("Result: ");
+            char result_str[20];
+            int_to_ascii(result, result_str);
+            kprint(result_str);
+        }
+    }
+    else if (find_char(input, '*') == 1) {
+        char num1[20];
+        char num2[20];
+        get_chars_before_op(input, num1, '*');
+        get_chars_after_op(input, num2, '*');
+        if (is_numeric(num1) && is_numeric(num2)) {
+            int int_num1 = atoi(num1);
+            int int_num2 = atoi(num2);
+            int result = int_num1 * int_num2; // Change this line to multiplication
+            kprint("Result: ");
+            char result_str[20];
+            int_to_ascii(result, result_str);
+            kprint(result_str);
+        }
+    }
+    else if (find_char(input, '/') == 1) {
+        char num1[20];
+        char num2[20];
+        get_chars_before_op(input, num1, '/');
+        get_chars_after_op(input, num2, '/');
+        if (is_numeric(num1) && is_numeric(num2)) {
+            int int_num1 = atoi(num1);
+            int int_num2 = atoi(num2);
+
+            if (int_num2 != 0) {
+                int result = int_num1 / int_num2; // Change this line to division
+                kprint("Result: ");
+                char result_str[20];
+                int_to_ascii(result, result_str);
+                kprint(result_str);
+            } else {
+                kprint("Division by zero is not allowed.");
+            }
+        }
+    }
+
+
     else if (strcmp(input, "BACKGROUND RED") == 0) {
         background_color = RED;
         clear_screen();
