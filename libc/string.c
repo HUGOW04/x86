@@ -116,27 +116,27 @@ int find_char(const char* str, char target) {
     return 0; // Return 0 if the character was not found
 }
 
-void get_chars_before_op(const char* input, char* output,const char* op) {
+void get_chars_before_op(const char* input, char* output, const char* op) {
     int i;
 
-    for (i = 0; input[i] != '\0' && input[i] != op; i++) {
+    for (i = 0; input[i] != '\0' && input[i] != op && input[i] != ' '; i++) {
         output[i] = input[i];
     }
 
     output[i] = '\0'; // Null-terminate the output string
 }
 
-void get_chars_after_op(const char* input, char* output,const char* op) {
+void get_chars_after_op(const char* input, char* output, const char* op) {
     int i, j;
 
-    // Find the position of the first '-' character in the input
+    // Find the position of the specified operator character in the input
     for (i = 0; input[i] != '\0' && input[i] != op; i++) {
-        // Continue until the '-' character is found
+        // Continue until the specified operator character is found
     }
 
-    // Skip the '-' character and copy characters after it to the output
-    if (input[i] == op) {
-        i++; // Skip the '-'
+    // Skip the specified operator character and any subsequent spaces
+    while (input[i] == op || input[i] == ' ') {
+        i++;
     }
 
     for (j = 0; input[i] != '\0'; i++, j++) {
