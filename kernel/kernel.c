@@ -8,7 +8,7 @@ void main() {
     irq_install();
     clear_screen();
     kprint_at("x86 operating system\n",30,1);
-    kprint(">");
+    kprint("\n>");
 }
 
 void user_input(char* input)
