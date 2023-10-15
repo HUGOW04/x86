@@ -13,17 +13,17 @@
 * BLUE
 * GREEN 
 * CYAN
-#define RED     0x40
-#define MAGENTA 0x50
-#define BROWN   0x60
-#define LIGHT_GRAY  0x70
-#define DARK_GRAY   0x80
-#define LIGHT_BLUE  0x90
-#define LIGHT_GREEN 0xA0
-#define LIGHT_CYAN  0xB0
-#define LIGHT_RED   0xC0
-#define LIGHT_MAGENTA 0xD0
-#define YELLOW      0xE0
-#define WHITE       0xF0
+* RED    
+* MAGENTA 
+* BROWN   
+* LIGHT_GRAY 
+* DARK_GRAY 
+* LIGHT_BLUE 
+* LIGHT_GREEN 
+* LIGHT_CYAN 
+* LIGHT_RED  
+* LIGHT_MAGENTA 
+* YELLOW    
+* WHITE  
 
 
