@@ -9,10 +9,10 @@
 ![image](https://github.com/HUGOW04/x86/assets/54809176/fe8a1963-2d72-4b8c-bfcb-d469f1b9b6b0)
 
 ## BACKGROUND COLORS
-#define BLACK   0x00
-#define BLUE    0x10
-#define GREEN   0x20
-#define CYAN    0x30
+* BLACK
+* BLUE
+* GREEN 
+* CYAN
 #define RED     0x40
 #define MAGENTA 0x50
 #define BROWN   0x60
